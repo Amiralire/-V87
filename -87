@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# تولید قسمت ثابت
+prefix="2001"
+
+# تولید قسمت‌های تصادفی
+segment1=$(printf "%04x" $((RANDOM%65536)))
+segment2=$(printf "%04x" $((RANDOM%65536)))
+segment3=$(printf "%04x" $((RANDOM%65536)))
+
+# تولید آدرس نهایی
+ipv6_address="$prefix:$segment1:$segment2:$segment3::"
+
+# نمایش آدرس
+echo $ipv6_address
